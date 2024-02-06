@@ -15,4 +15,4 @@ jobs:
         with:
           filename: test.js
           cloud: true
-          token: ${{ secrets.K6_CLOUD_API_TOKEN_2 }}
+          token: ${{ secrets.K6_CLOUD_API_TOKEN }}
