@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
 
       - name: Run k6 cloud test
         uses: k6io/action@v0.1
         with:
           filename: test.js
           cloud: true
-          K6_CLOUD_TOKEN: $K6_CLOUD_API_TOKEN
+          token: ${{ secrets.K6_CLOUD_API_TOKEN }}
