@@ -1,10 +1,8 @@
 name: Pull Request
 
 on:
-  workflow_dispatch:
-    inputs:
-      vu:
-        required: true
+  pull_request_review:
+    types: [submitted]
 
 jobs:
   k6_cloud_test:
