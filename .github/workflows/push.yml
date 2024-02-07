@@ -3,7 +3,7 @@ name: Pull Request
 on:
   workflow_dispatch:
     inputs:
-      vus:
+      vu:
         required: true
 
 jobs:
