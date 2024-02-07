@@ -1,2 +1,2 @@
 //Variaveis de Execução
-export const vus = "50";
+export const vus = `50`;
