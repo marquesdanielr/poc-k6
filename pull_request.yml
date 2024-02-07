@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   k6_cloud_test:
-    name: k6 cloud test run
+    name: k6 cloud test run 1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
