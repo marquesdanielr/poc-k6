@@ -1,18 +1,17 @@
-name: Pull Request
+name: Push
 
-on: [pull_request]
+on: [push]
 
 jobs:
-  k6_cloud_test:
-    name: k6 cloud test run
+  k6_load_test:
+    name: k6 Load Test
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run k6 cloud test
+      - name: Run local k6 test
         uses: grafana/k6-action@v0.3.1
         with:
           filename: test.js
-          cloud: true
-          token: ${{secrets.K6_API_TOKEN}}
