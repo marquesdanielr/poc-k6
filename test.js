@@ -1,7 +1,7 @@
 import http from "k6/http";
 import { sleep } from "k6";
 
-import { vus } from "./variables.ts";
+import { vus } from "./variables.js";
 
 export const options = {
   duration: "1m",
