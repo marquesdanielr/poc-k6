@@ -1,7 +1,6 @@
 name: Push
-pipeline == true;
+
 on: [push]
-if: ${{ pipeline == true }}
 
 jobs:
   k6_cloud_test:
