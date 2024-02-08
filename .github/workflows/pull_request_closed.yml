@@ -2,11 +2,11 @@ name: Pull Request closed
 
 on:
   pull_request:
-    types: [closed]
+    types: [opened, closed]
 
 jobs:
   k6_load_test:
-    if: github.event.pull_request.merged == false
+    if: github.event.pull_request.merged == true
 
     name: k6 Load Test
     runs-on: ubuntu-latest
