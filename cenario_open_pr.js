@@ -1,4 +1,4 @@
-import { teste } from "./test";
+import { teste } from "./test.js";
 
 export const options = {
   duration: duration,
