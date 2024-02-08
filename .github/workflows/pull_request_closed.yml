@@ -1,13 +1,12 @@
-name: Pull Request Opened
+name: Pull Request closed
 
 on:
-  pull_request_target:
-    types: opened
-    paths-ignore:
-      - "variables.js"
+  pull_request_review:
+    types: [submitted]
 
 jobs:
   k6_load_test:
+    if: github.event.review.state == 'APPROVED'
     name: k6 Load Test
     runs-on: ubuntu-latest
 

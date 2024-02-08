@@ -1,0 +1,30 @@
+name: Pull Request Opened
+
+<<<<<<<< HEAD:push.yml
+on: [push]
+========
+on:
+  pull_request_target:
+    types: opened
+    paths-ignore:
+      - "variables.js"
+>>>>>>>> 8f45049b233f7f74f14db1a2d92e2e1f265aad90:.github/workflows/pull_request_closed.yml
+
+jobs:
+  k6_cloud_test:
+    name: k6 cloud test run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+<<<<<<<< HEAD:push.yml
+
+      - name: Run k6 cloud test
+========
+      - name: Run local k6 test
+>>>>>>>> 8f45049b233f7f74f14db1a2d92e2e1f265aad90:.github/workflows/pull_request_closed.yml
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: test.js
+          cloud: true
+          token: ${{secrets.K6_API_TOKEN}}
