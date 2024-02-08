@@ -1,12 +1,13 @@
 name: Pull Request closed
 
 on:
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    types: [closed]
 
 jobs:
   k6_load_test:
-    if: github.event.review.state == 'APPROVED'
+    if: github.event.pull_request.merged == true
+
     name: k6 Load Test
     runs-on: ubuntu-latest
 
