@@ -1,36 +1,13 @@
 name: Pull Request
 
-<<<<<<< HEAD
-on: [pull_request]
-
-jobs:
-  k6_cloud_test:
-    name: k6 cloud test run
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Run k6 cloud test
-        uses: grafana/k6-action@v0.3.1
-        with:
-          filename: test.js
-          cloud: true
-          token: ${{secrets.K6_API_TOKEN}}
-=======
 on:
   pull_request_review:
     types: [submitted]
 
 jobs:
-<<<<<<<< HEAD:.github/workflows/pull_request.yml
   k6_load_test:
     if: github.event.review.state == 'APPROVED'
     name: k6 Load Test
-========
-  k6_cloud_test:
-    name: k6 cloud test run 1
->>>>>>>> 8f45049b233f7f74f14db1a2d92e2e1f265aad90:pull_request.yml
     runs-on: ubuntu-latest
 
     steps:
@@ -40,4 +17,3 @@ jobs:
         uses: grafana/k6-action@v0.3.1
         with:
           filename: test.js
->>>>>>> 8f45049b233f7f74f14db1a2d92e2e1f265aad90
