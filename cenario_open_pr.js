@@ -1,4 +1,5 @@
 import { teste } from "./test.js";
+import { vu, duration } from "./variables.js";
 
 export const options = {
   duration: duration,
