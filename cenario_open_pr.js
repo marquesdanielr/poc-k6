@@ -1,7 +1,4 @@
-import http from "k6/http";
-import { sleep } from "k6";
-
-import { vu, duration } from "./variables.js";
+import { teste } from "./test";
 
 export const options = {
   duration: duration,
@@ -12,7 +9,6 @@ export const options = {
   },
 };
 
-export function teste() {
-  const res = http.get("https://test.k6.io");
-  sleep(1);
+export function testCenario() {
+  teste();
 }

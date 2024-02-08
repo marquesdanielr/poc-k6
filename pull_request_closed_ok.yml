@@ -1,0 +1,35 @@
+name: Pull Request closed
+
+on:
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  k6_load_test:
+    if: github.event.pull_request.merged == false
+
+    name: k6 Load Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run local k6 test
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: cenario_open_pr.js
+
+  k6_cloud_test:
+    if: github.event.pull_request.merged == true
+    name: k6 cloud test run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run k6 cloud test
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: cenario_open_pr.js
+          cloud: true
+          token: ${{secrets.K6_API_TOKEN}}
