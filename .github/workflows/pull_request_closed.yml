@@ -6,7 +6,7 @@ on:
 
 jobs:
   k6_load_test:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == false
 
     name: k6 Load Test
     runs-on: ubuntu-latest
