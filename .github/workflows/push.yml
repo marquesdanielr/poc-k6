@@ -5,6 +5,8 @@ on:
     types: [submitted]
 
 jobs:
+  approved:
+    if: github.event.review.state == 'APPROVED'
   k6_cloud_test:
     name: k6 cloud test run
     runs-on: ubuntu-latest
