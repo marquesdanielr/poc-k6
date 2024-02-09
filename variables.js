@@ -1,2 +1,3 @@
 //Variaveis de Execução
-export const vu = 50;
+export const vus = 50;
+export const duration = "1m";
