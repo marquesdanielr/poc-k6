@@ -14,4 +14,4 @@ jobs:
       - name: Run local k6 test
         uses: grafana/k6-action@v0.3.1
         with:
-          filename: cenario_open_pr.js
+          filename: ./CB-APP-Checkout/APP_Checkout_CB_Smoke.ts
