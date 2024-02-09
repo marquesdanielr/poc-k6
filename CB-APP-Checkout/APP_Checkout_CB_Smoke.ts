@@ -1,14 +1,14 @@
 import { appCheckoutB2C, appCheckoutMktp, appCheckoutRetira } from "./scenarios/appCheckout.scenarios.ts";
 import { randomIntBetween } from 'https://jslib.k6.io/k6-utils/1.1.0/index.js';
+import { duration_st, vus_st } from "./execVariables.ts"
 
 export const options = {
   scenarios: {
     appCheckoutSmoketest: {
       executor: "ramping-vus",
-      startvus: 1,
+      startvus: vus_st,
       stages: [
-        { duration: '1m', target: 2 },
-        { duration: '1m', target: 2 }
+        { duration: duration_st, target: vus_st }
       ],
       exec: "appCheckoutScenario",
     }

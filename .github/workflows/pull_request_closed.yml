@@ -1,10 +1,13 @@
 name: Pull Request closed
 
 on:
-  push:
+  pull_request:
+    types: [opened, closed]
 
 jobs:
   k6_load_test:
+    if: github.event.pull_request.merged == false
+
     name: k6 Load Test
     runs-on: ubuntu-latest
 
@@ -15,3 +18,18 @@ jobs:
         uses: grafana/k6-action@v0.3.1
         with:
           filename: ./CB-APP-Checkout/APP_Checkout_CB_Smoke.ts
+
+  k6_cloud_test:
+    if: github.event.pull_request.merged == true
+    name: k6 cloud test run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run k6 cloud test
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: ./CB-APP-Checkout/APP_Checkout_Bateria.ts
+          cloud: true
+          token: ${{secrets.K6_API_TOKEN}}
