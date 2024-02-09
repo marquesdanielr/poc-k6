@@ -30,6 +30,6 @@ jobs:
       - name: Run k6 cloud test
         uses: grafana/k6-action@v0.3.1
         with:
-          filename: ./CB-APP-Checkout/APP_Checkout_Bateria.ts
+          filename: ./CB-APP-Checkout/APP_Checkout_CB_Bateria.ts
           cloud: true
           token: ${{secrets.K6_API_TOKEN}}
