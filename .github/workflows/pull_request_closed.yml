@@ -5,9 +5,11 @@ on:
     types:
       [opened, edited, closed, reopened, review_requested, ready_for_review]
 
-  push:
-
   workflow_dispatch:
+    env:
+      LEVEL: ${{ inputs.logLevel }}
+      TAGS: ${{ inputs.tags }}
+      ENVIRONMENT: ${{ inputs.environment }}
 
 jobs:
   k6_load_test:
