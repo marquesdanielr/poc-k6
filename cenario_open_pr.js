@@ -1,4 +1,4 @@
-import { teste } from "./test.js";
+import { default } from "./test.js";
 import { vu, duration } from "./variables.js";
 
 export const options = {
@@ -11,5 +11,5 @@ export const options = {
 };
 
 export function testCenario() {
-  teste();
+  default();
 }
