@@ -1,6 +1,8 @@
 name: Pull Request closed
 
 on:
+  push:
+
   pull_request:
     types:
       [opened, edited, closed, reopened, review_requested, ready_for_review]
@@ -24,8 +26,6 @@ on:
         description: "Environment to run tests against"
         type: environment
         required: true
-
-  push:
 
 jobs:
   k6_load_test:
