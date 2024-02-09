@@ -7,6 +7,8 @@ on:
 
   push:
 
+  workflow_dispatch:
+
 jobs:
   k6_load_test:
     if: github.event.pull_request.merged == false
